@@ -20,6 +20,15 @@ const Icons = ({name}) => {
                           strokeLinecap="round"
                           strokeLinejoin="round"/>
                 </svg>
+            case "loadder":
+                return <svg
+                    id='loadder'
+                    width="60" height="60" viewBox="0 0 44 44">
+                    <circle cx="22" cy="22" r="20" fill="none" stroke="#E5E7EB" strokeWidth="4"/>
+                    <circle cx="22" cy="22" r="20" fill="none" stroke="#3c8445" strokeWidth="4" strokeDasharray="125.6" strokeDashoffset="125.6">
+                        <animate attributeName="stroke-dashoffset" values="125.6;0" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
             default:
                 return null
         }
