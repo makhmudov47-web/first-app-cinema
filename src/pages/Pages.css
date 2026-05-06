@@ -1,0 +1,17 @@
+.Page {
+    min-height: calc(100vh - 80px - 80px);
+    width: 100%;
+    padding: 50px;
+    margin: 40px auto;
+}
+
+.FilmList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin: auto;
+
+
+}
+
+

@@ -1,0 +1,19 @@
+# Зависимости
+node_modules/
+dist/
+build/
+
+# Логи и кэш
+npm-debug.log*
+yarn-error.log*
+.eslintcache
+
+# Настройки редакторов
+.idea/
+.vscode/
+*.swp
+*.DS_Store
+
+# Переменные окружения (пароли, ключи)
+.env
+.env.local

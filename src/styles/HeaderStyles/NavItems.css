@@ -1,0 +1,13 @@
+.NavItems {
+    width: 180px;
+    height: 100%;
+    line-height: 80px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--target-color);
+    }
+}

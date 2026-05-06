@@ -1,0 +1,8 @@
+.menu {
+    width: calc(100% - 200px - 300px);
+    height: 100%;
+    display: flex;
+    list-style: none;
+    color: #fff;
+
+}

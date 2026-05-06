@@ -1,0 +1,25 @@
+.footer {
+    background: var(--main-color);
+    height: 80px;
+    width: 100%;
+   
+}
+
+input {
+    color: black;
+    border: none;
+    outline: none;
+    width: 180px;
+    height: 25px;
+}
+button {
+    color: white;
+    background-color: #61dafb;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 180px;
+    height: 25px;
+    line-height: 23px;
+
+}
