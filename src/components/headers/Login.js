@@ -12,6 +12,7 @@ const Login = ({setModalBox}) => {
             <input type={"password"} placeholder={'Введите пароль'}/>
 
             <button onClick={signIn}>Войти</button>
+            <input/>
         </>
     )
 }
