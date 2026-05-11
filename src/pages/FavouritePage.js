@@ -8,14 +8,14 @@ const FavouritePage = ({films}) => {
     const [isLoaded, setIsLoaded] = useState(false);
     let favourites = []
 
-    useEffect(() => {
+  /*   useEffect(() => {
 
 
     let favourite = localStorage.getItem('favourites');
     favourite = favourite.split(',');
     favourites =  films.filter((item) => favourite.includes(item.id));
         setIsLoaded( )
-    },[])
+    },[]) */
     return (<div className='Page'>
 
         {

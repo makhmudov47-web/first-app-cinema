@@ -1,5 +1,7 @@
 import React from 'react';
 import "../../src/styles/mainStyles//ModalBox.css"
+// import setModalBoxAction from "../redux/actions/actionModalBox";
+// import {connect} from "react-redux";
 
 const ModalBox = ({setModalBox , children}) => {
 
@@ -16,5 +18,12 @@ const ModalBox = ({setModalBox , children}) => {
     )
 
 }
-
+// function mapDispatchToProps(dispatch) {
+//     return {
+//         setModalBox: modalBox => {
+//             dispatch(setModalBoxAction(modalBox))
+//         }
+//     }
+// }
+// export default connect(null,mapDispatchToProps) (ModalBox);
 export default ModalBox;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/headers/Header';
 import MainPage from './pages/MainPage';
@@ -8,8 +8,10 @@ import FilmPage from './pages/FilmPage'
 import FavouritePage from './pages/FavouritePage';
 import ModalBox from "./components/ModalBox";
 
+// import {connect} from "react-redux";
 import Registration from "./components/headers/Registration";
 import Login from "./components/headers/Login";
+
 
 class Film {
     films
@@ -22,15 +24,17 @@ class Film {
 }
 
 
-const App = () => {
-    const [modalBox, setModalBox] = useState('');
-    const films = [new Film(1, "Blade runner 2049", "movie1"), new Film(2, "мортал комбат2", "movie2"), new Film(3, "Film By Designer", "movie3"),]
-    const modalBoxes = {
-       'Login': <Login setModalBox={setModalBox} />,
-       "Registration": <Registration setModalBox={setModalBox}    />,
-    }
+const App = ({modalBox}) => {
+    const films = [new Film(1, "Blade runner 2049", "movie1"),
+        new Film(2, "мортал комбат2", "movie2"),
+        new Film(3, "Film By Designer", "movie3"),]
+
+const modalBoxes = {
+        'Login' :<Login />,
+        'Registration' :<Registration />
+}
     return (<div className='app'>
-        <Header setModalBox={setModalBox}/>
+        <Header />
         <Routes>
             <Route path='/' element={<MainPage films={films}/>}/>
             <Route path='favourite' element={<FavouritePage films={films}/>}/>
@@ -38,13 +42,17 @@ const App = () => {
         </Routes>
         <Footer/>
         {
-            modalBox !== '' ?
-                <ModalBox setModalBox={setModalBox}>{ modalBoxes[modalBox] }</ModalBox>
-                : null
+            modalBox !== '' ? <ModalBox>{ modalBoxes[modalBox] }</ModalBox> : null
         }
 
     </div>)
 }
 
-
+// function mapStateToProps(state) {
+//     return {
+//         modalBox: state.getModalBox.modalBox
+//     }
+// }
+//
+// export default connect(mapStateToProps)(App);
 export default App;

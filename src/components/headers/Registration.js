@@ -1,10 +1,17 @@
 import React from "react";
-import icons from "../../assets/icons/Icons";
 import Icons from "../../assets/icons/Icons";
+// import setModalBoxAction from "../../redux/actions/actionModalBox";
+// import {connect} from "react-redux";
 
 const Registration = ({setModalBox}) => {
+    const [loading, setLoading] = React.useState(false);
     function signUp() {
-        setModalBox('');
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            setModalBox('');
+        } , 3000)
+
     }
     return (
         <>
@@ -13,9 +20,20 @@ const Registration = ({setModalBox}) => {
             <input type={"password"} placeholder={'Введите пароль'}/>
             <input type={"email"} placeholder={'Введите почту'}/>
             <button onClick={signUp}>Сохранить</button>
-            <Icons name='loadder'/>
+            {
+                loading ? <Icons name='loadder'/> :null
+            }
         </>
     )
 }
 
-export default Registration;
+// function mapDispatchToProps(dispatch) {
+//     return {
+//         setModalBox: modalBox => {
+//             dispatch(setModalBoxAction(modalBox))
+//         }
+//     }
+// }
+// export default connect(null,mapDispatchToProps) (Registration);
+export default Registration
+

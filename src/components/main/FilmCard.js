@@ -1,4 +1,4 @@
-import {React, useState ,useEffect} from 'react';
+    import {React, useState ,useEffect} from 'react';
 import "../../styles/mainStyles/FilmCard.css"
 import {Link} from 'react-router-dom';
 import Movie1 from "../../assets/images/movie1.jpg"

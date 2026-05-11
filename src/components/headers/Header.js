@@ -4,13 +4,13 @@ import Logo from './Logo';
 import Menu from './Menu';
 import UserContainer from './UserContainer';
 
-const  Header = ({setModalBox}) => {
+const  Header = () => {
 
     return(
       <div className='header'>
         <Logo/>
         <Menu/>
-        <UserContainer setModalBox={setModalBox}/>
+        <UserContainer/>
       </div>
     )
 

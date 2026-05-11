@@ -1,4 +1,6 @@
 import React from "react";
+// import setModalBoxAction from "../../redux/actions/actionModalBox";
+// import {connect} from "react-redux";
 
 const Login = ({setModalBox}) => {
     function signIn(){
@@ -17,4 +19,12 @@ const Login = ({setModalBox}) => {
     )
 }
 
+/*function mapDispatchToProps(dispatch) {
+    return {
+        setModalBox: modalBox => {
+            dispatch(setModalBoxAction(modalBox))
+        }
+    }
+}
+export default connect(null , mapDispatchToProps)(Login);*/
 export default Login
