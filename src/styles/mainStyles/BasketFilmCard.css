@@ -1,0 +1,32 @@
+.BasketFilmCard {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+.BasketFilmCard img {
+    width: 50px;
+    height: 80px;
+
+}
+.BasketFilmCard p {
+    width: 100%;
+    height: 100%;
+}
+
+.BasketFilmCard_removeFromBasket{
+
+    width: 80px;
+    height: 80px;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+.BasketFilmCard_removeFromBasket::con{
+    content: "x";
+}

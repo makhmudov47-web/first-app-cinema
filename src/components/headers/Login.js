@@ -1,17 +1,25 @@
 import React from "react";
 // import setModalBoxAction from "../../redux/actions/actionModalBox";
 // import {connect} from "react-redux";
+import {useDispatch} from "react-redux";
+import {setModalBox} from "../../store/modalBoxSlice";
+import {setIsAuth , setLogin} from "../../store/authSlice";
 
-const Login = ({setModalBox}) => {
+const Login = () => {
+    const dispatch = useDispatch();
     function signIn(){
-        setModalBox('');
+        const login = document.getElementById("login").value;
+        const password = document.getElementById("password").value;
+        dispatch(setIsAuth(true));
+        dispatch(setLogin(login));
+        dispatch(setModalBox(''));
     }
 
     return (
         <>
             <h2>Вход</h2>
-            <input type={"text"} placeholder={'Введите логин '}/>
-            <input type={"password"} placeholder={'Введите пароль'}/>
+            <input id="login" type={"text"} placeholder={'Введите логин '}/>
+            <input id="password" type={"password"} placeholder={'Введите пароль'}/>
 
             <button onClick={signIn}>Войти</button>
 

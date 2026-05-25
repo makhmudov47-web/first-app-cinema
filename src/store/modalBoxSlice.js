@@ -6,12 +6,12 @@ export const modalBoxSlice = createSlice({
         value:''
     },
     reducers: {
-        getModalBox: (state, action) => {
+        setModalBox: (state, action) => {
             state.value = action.payload
         }
     }
 })
 
-export const {modalBox} = modalBoxSlice.actions
+export const {setModalBox} = modalBoxSlice.actions
 
 export default modalBoxSlice.reducer

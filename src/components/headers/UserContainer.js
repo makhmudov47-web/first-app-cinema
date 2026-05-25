@@ -3,23 +3,41 @@ import "../../styles/HeaderStyles/userContainer.css"
 import Avatar from "../../assets/logo/logo.png"
 // import {connect} from "react-redux";
 // import setModalBoxAction from "../../redux/actions/actionModalBox";
-import modalBox from "../ModalBox";
 
-const  UserContainer=({setModalBox}) =>{
 
-    return(
-      <div className='userContainer'>
-        <img src={Avatar} alt='logo'/>
-        <p>кинотеатр</p>
-        <ul>
-          <li onClick={() => setModalBox('Login')}>Войти</li>
-          <li onClick={() => setModalBox('Registration')}>Регистрация</li>
-        </ul>
-       
-      </div>
-    )
+import {useDispatch, useSelector} from "react-redux";
+import {setModalBox} from "../../store/modalBoxSlice";
+import {setIsAuth} from "../../store/authSlice";
 
-}
+const UserContainer = () => {
+    const isAuth = useSelector((state) => state.auth.isAuth);
+    const login = useSelector((state) => state.auth.user.login);
+    const dispatch = useDispatch()
+    return (
+        <div className='userContainer'>
+            {isAuth ?
+                <>
+                    <img src={Avatar} alt='logo'/>
+                    <p>{login}</p>
+                    <ul>
+                        <li>профиль</li>
+                        <li onClick={() => dispatch(setIsAuth(false))}>выход</li>
+                    </ul>
+                </>
+                :
+                <>
+                    <img src={Avatar} alt='logo'/>
+                    <p>кинотеатр</p>
+                    <ul>
+                        <li onClick={() => dispatch(setModalBox('sign in'))}>Войти</li>
+                        <li onClick={() => dispatch(setModalBox('Registration'))}>Регистрация</li>
+                    </ul>
+                </>
+            }
+                </div>
+                )
+
+            }
 /*function mapDispatchToProps(dispatch) {
     return {
         setModalBox: modalBox => {
@@ -29,4 +47,4 @@ const  UserContainer=({setModalBox}) =>{
 }
 export default connect(null,mapDispatchToProps) (UserContainer);*/
 
-export default userContainer;
+export default UserContainer;

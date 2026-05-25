@@ -29,6 +29,16 @@ const Icons = ({name}) => {
                         <animate attributeName="stroke-dashoffset" values="125.6;0" dur="2s" repeatCount="indefinite"/>
                     </circle>
                 </svg>
+            case "basket" :
+                return <svg width="30px"
+                            height="30px"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none">
+                    <circle cx="7.5" cy="18.5" r="1.5" />
+                    <circle cx="16.5" cy="18.5" r="1.5" />
+                    <path  strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5h2l.6 3m0 0L7 15h10l2-7H5.6z"/>
+                </svg>
             default:
                 return null
         }

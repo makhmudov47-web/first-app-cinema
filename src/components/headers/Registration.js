@@ -2,14 +2,17 @@ import React from "react";
 import Icons from "../../assets/icons/Icons";
 // import setModalBoxAction from "../../redux/actions/actionModalBox";
 // import {connect} from "react-redux";
+import {setModalBox} from "../../store/modalBoxSlice";
+import {useDispatch} from "react-redux";
 
-const Registration = ({setModalBox}) => {
+const Registration = () => {
+    const dispatch = useDispatch();
     const [loading, setLoading] = React.useState(false);
     function signUp() {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-            setModalBox('');
+            dispatch(setModalBox(''));
         } , 3000)
 
     }
