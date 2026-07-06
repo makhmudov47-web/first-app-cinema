@@ -36,15 +36,23 @@ const App = () => {
     ])
 
     useEffect(() => {
-        fetch('http://www.omdbapi.com/?t=StarWars&apikey=dc758a5b')
+        const api = 'http://localhost:9999/api/movies';
+        fetch(api)
             .then((response) => response.json())
             ///*это была ошибкой*/.then(response => response.json())
             .then((result) => {
-                const mass = [...films, new Film(4, result.Title, 'movie2')]
+                console.log(result);
+                const mass = [...films, new Film(4, result.data[3].title, 'movie2')]
                 setFilms(mass)
                 setFullFilms([...mass])
-            })
+
+            }).catch((error) =>{
+            console.log(`error=====>>>>>> ${error}`)
+        })
     }, []);
+
+
+
 
     const modalBoxes = {
         'sign in' :<Login />,

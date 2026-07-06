@@ -20,7 +20,7 @@ const BasketFilmCard = ({id, header, poster}) => {
             <p>{header}</p>
         {<button className="BasketFilmCard_removeFromBasket" onClick={() =>dispatch(deleteFilmInBasket(id))
         }><Icons
-            name={'loadder'}/></button>}
+            name={'remover'}/></button>}
 
 
     </div>)

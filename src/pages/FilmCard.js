@@ -1,4 +1,5 @@
- import {React, useState ,useEffect} from 'react';
+ import React from "react";
+import  { useState ,useEffect} from 'react';
 import "../styles/mainStyles/FilmCard.css"
 import {Link} from 'react-router-dom';
 import Icons from "../assets/icons/Icons";
