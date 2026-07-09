@@ -21,7 +21,11 @@ const UserContainer = () => {
                     <p>{login}</p>
                     <ul>
                         <li>профиль</li>
-                        <li onClick={() => dispatch(setIsAuth(false))}>выход</li>
+                        <li onClick={() => {
+                            localStorage.removeItem('token');
+                            dispatch(setIsAuth(false))
+
+                        }}>выход</li>
                     </ul>
                 </>
                 :

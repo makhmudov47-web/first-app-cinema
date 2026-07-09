@@ -1,9 +1,9 @@
-import React , {  useState  }from "react";
+import React , {    }from "react";
 // import setModalBoxAction from "../../redux/actions/actionModalBox";
 // import {connect} from "react-redux";
 import {useDispatch} from "react-redux";
 import {setModalBox} from "../../store/modalBoxSlice";
-import {setIsAuth, setLogin} from "../../store/authSlice";
+import {setIsAuth, setUser} from "../../store/authSlice";
 import Icons from "../../assets/icons/Icons";
 
 const Login = () => {
@@ -11,7 +11,8 @@ const Login = () => {
     const [loading, setLoading] = React.useState(false);
 
 
-    function signIn() {
+    function signIn()
+    {
 
         const login = document.getElementById("login").value;
         const password = document.getElementById("password").value;
@@ -37,7 +38,7 @@ const Login = () => {
                     if (result.token) {
                         localStorage.setItem("token", result.token);
                         dispatch(setIsAuth(true));
-                        dispatch(setLogin(login));
+                        dispatch(setUser({login}));
                         dispatch(setModalBox(''));
                     }
 
