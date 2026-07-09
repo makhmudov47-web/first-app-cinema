@@ -8,7 +8,7 @@ import Icons from "../assets/icons/Icons";
     import Movie3 from "../assets/images/movie3.png"
     import {useSelector , useDispatch} from "react-redux";
     import {addFilmInBasket, deleteFilmInBasket} from "../store/basketSlice";
-    import {authSlice, setLogin} from "../store/authSlice";
+    import {authSlice, setUser} from "../store/authSlice";
  import login from "../components/headers/Login";
 
 const FilmCard = ({id, header, poster}) => {
